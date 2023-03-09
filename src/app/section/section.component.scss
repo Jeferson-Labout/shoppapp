@@ -1,0 +1,16 @@
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    app-section-banner {
+      width: 100%;
+    }
+  
+    app-section-produtos-destaques {
+      width: 100%;
+      max-width: 1200px;
+      padding: 20px;
+    }
+  }
+  

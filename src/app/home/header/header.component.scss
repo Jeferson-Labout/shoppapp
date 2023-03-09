@@ -1,0 +1,123 @@
+$header-background-color: #2c2d36;
+$header-text-color: #fff;
+$header-text-weight: 600;
+
+$header-padding: 10px 20px;
+
+$header-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+
+$navbar-breakpoint: 768px;
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $header-padding;
+  background-color: $header-background-color;
+  box-shadow: $header-box-shadow;
+
+  .logo {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #fff;
+    margin-right: auto;
+    text-align: left;
+  
+    a {
+      text-decoration: none;
+    }
+  }
+  
+
+  nav {
+    display: flex;
+    align-items: center;
+
+    a {
+      margin-left: 20px;
+      color: $header-text-color;
+      font-weight: $header-text-weight;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .navbar-toggler {
+    display: none;
+  }
+
+  .navbar-collapse {
+    @media (max-width: $navbar-breakpoint) {
+      position: fixed;
+      top: 56px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 100;
+      background-color: #fff;
+      overflow-y: auto;
+
+      nav {
+        flex-direction: column;
+        text-align: center;
+
+        a {
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .navbar-collapse {
+      display: none;
+    }
+  
+    .navbar-toggler {
+      display: block;
+    }
+  
+    .navbar-toggler:focus {
+      outline: none;
+    }
+  
+    .navbar-toggler-icon {
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      vertical-align: middle;
+      content: "";
+      background: no-repeat center center;
+      background-size: 100% 100%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0,0,0,0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+  
+    .navbar-toggler.active .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0,0,0,0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M7 7l16 16M7 23l16-16'/%3E%3C/svg%3E");
+    }
+  
+    .navbar-nav {
+      display: none;
+      flex-direction: column;
+      padding: 1rem;
+      text-align: center;
+  
+      .nav-item {
+        margin-bottom: 0.5rem;
+      }
+  
+      .nav-link {
+        font-size: 1.25rem;
+      }
+    }
+  
+    .navbar-collapse.show .navbar-nav {
+      display: flex;
+    }
+  }
+  
+
+}
